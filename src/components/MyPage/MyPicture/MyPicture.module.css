@@ -1,0 +1,12 @@
+.flexImg{
+	width: 100%;
+
+
+
+}
+
+.flexBlocks{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}

@@ -1,0 +1,52 @@
+.url{
+	width: 100%;
+	height: 100%;
+
+}
+
+
+.describeFlex{
+	height: 100px;
+	color: #fff;
+	display: flex;
+	justify-content:center;
+}
+.imgBlock{
+	width: 400px;
+
+	
+
+}
+.imgRad{
+
+	background: #000;
+	border:1px solid #fff;
+	border-radius: 10px;
+}
+
+.imgRad:hover{
+	cursor: pointer;
+
+}
+
+.imgBlock{
+	
+	width: 500px;
+}
+
+.imgBlock.url{
+	background: #000;  /* У блока, оборачивающего картинку при наведении будет просвечивать черный фон */
+	overflow: hidden;  /* Ограничиваем видиую область */
+}
+
+.imgBlock .url .imgRad{
+	opacity: 1;
+	transition: opacity 124ms linear, transform 124ms linear;  /* Плавное изменение прозрачности и увеличения */
+	width: 100%;
+	height: auto;
+	display: block; /* Убираем полосу под картинкий */
+}
+.imgBlock:hover .url .imgRad{
+	opacity: 0.9; /* Высветляем картинку, но она становится темнее, так как под ней черный фон */
+	transform: scale(1.05); /* Увеличение картинки */
+}
