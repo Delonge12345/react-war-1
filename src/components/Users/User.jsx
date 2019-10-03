@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import styles from './users.module.css';
+import classes from './users.module.css';
 
 
 let User = ({user,followDisable,followThunk,unfollowThunk}) => {
@@ -12,7 +12,7 @@ let User = ({user,followDisable,followThunk,unfollowThunk}) => {
 						<NavLink to={'/profile/' + user.id}>
 							{/*<img src={user.photos.small != null ? user.photos.small : userPhoto}*/}
 							<img src={user.photos.small != null ? user.photos.small : user.userPhoto}
-									 className={styles.userPhoto}/>
+									 className={classes.userPhoto}/>
 						</NavLink>
 					</div>
 					<div>

@@ -53,7 +53,7 @@ export const getUsersAuthThunk= ()=> {
 
 
 
-export const logInThunk=(email,password,rememberMe)=>async (dispatch)=>{
+export const logInThunk=(email,password,rememberMe)=> async (dispatch)=>{
 
 
 	let response = await authAPI.login(email,password,rememberMe)

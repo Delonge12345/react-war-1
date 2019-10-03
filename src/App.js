@@ -10,7 +10,7 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import store from "./redux/redux-store";
 import {withRouter} from "react-router-dom";
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter, BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux"
 import {connect} from "react-redux";
 import {compose} from "redux";
@@ -73,11 +73,11 @@ let AppContainer = compose(
 
 
 const SocialJSApp = (props)=>{
-		return <BrowserRouter>
+		return <HashRouter basename={process.env.PUBLIC_URL}>
 			<Provider store={store}>
 				<AppContainer />
 			</Provider>
-		</BrowserRouter>
+		</HashRouter>
 }
 
 

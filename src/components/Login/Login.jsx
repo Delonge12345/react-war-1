@@ -3,12 +3,13 @@
  */
 import React, {Component} from "react";
 import {Field, reduxForm} from "redux-form";
-import {Input} from "../common/FormsControls/FormsControls";
+import {createField, Input} from "../common/FormsControls/FormsControls";
 import {maxLengthCreator, minLengthCreator, required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {logInThunk} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import classes from "./../common/FormsControls/FormsControls.module.css"
+
 
 
 
@@ -21,15 +22,9 @@ const LoginForm = (handleSubmit,error) => {
 	return (
 
 		<form onSubmit={handleSubmit}>
-			<div>
-				<Field placeholder={"Email"} name={"email"} component={Input} validate={[required]}/>
-			</div>
-			<div>
-				<Field placeholder={"Password"} name={"password"} component={Input} validate={[required,minLength8]} type={"password"}/>
-			</div>
-			<div>
-				<Field component={Input} name={"rememberMe"} type={"checkbox"}/>Remember me
-			</div>
+				{createField("Email","email",Input,[required])}
+				{createField("Password","password",Input,[required],[required,minLength8],{type:"password"})}
+				{createField(null,"rememberMe",Input,[],{type:"checkbox"},"Remember me")}
 
 			{error && <div className={classes.formSummaryError}>
 				{error}
